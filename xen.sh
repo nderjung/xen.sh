@@ -106,58 +106,15 @@ _deps_apt() {
     case $DISTRO in
         bionic|xenial)
             apt-get install -y --no-install-recommends \
-                autoconf \
-      install-info \
-      build-essential \
-      bcc \
-      bin86 \
-      gawk \
-      bridge-utils \ 
-      iproute \
-      libcurl3 \
-      libcurl4-openssl-dev \
-      bzip2 \
-      kmod \
-      transfig \
-      tgif \
-      libpixman-1-0 \
-      liblzma-dev \
-      wget \
-      libc6-dev-i386 \
-      ca-certificates \
-      texinfo \
-      pciutils-dev \
-      mercurial \
-      make \
-      gcc \
-      libc6-dev \
-      zlib1g-dev \
-      python \
-      python-dev \
-      python-twisted \
-      libncurses5-dev \
-      patch \
-      libvncserver-dev \
-      libsdl-dev \
-      libjpeg-dev \
-      iasl \
-      libbz2-dev \
-      e2fslibs-dev \
-      git-core \
-      uuid-dev \
-      ocaml \
-      ocaml-findlib \
-      libx11-dev \
-      bison \
-      flex \
-      xz-utils \
-      libyajl-dev \
-      gettext \
-      libpixman-1-dev \
-      libaio-dev \
-      markdown \
-      pandoc curl
-                
+                autoconf bcc bin86 bison bridge-utils build-essential bzip2 \
+                ca-certificates curl e2fslibs-dev flex gawk gcc gettext \
+                git-core iasl install-info iproute kmod libaio-dev libbz2-dev \
+                \libc6-dev libc6-dev-i386 libcurl3 libcurl4-openssl-dev \
+                \libjpeg-dev liblzma-dev libncurses5-dev libpixman-1-0 \
+                libpixman-1-dev libsdl-dev libvncserver-dev libx11-dev \
+                libyajl-dev make markdown mercurial ocaml ocaml-findlib pandoc \
+                patch pciutils-dev python python-dev python-twisted texinfo \
+                tgif transfig uuid-dev wget xz-utils zlib1g-de 
             ;;
         *)
             echo "This script is not yet compatible with $DISTRO"
