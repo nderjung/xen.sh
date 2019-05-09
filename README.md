@@ -5,6 +5,9 @@ A do-it-yourself script that downloads, builds and installs [Xen](https://xenpro
 ## Usage
 
 ```
+# wget https://raw.githubusercontent.com/nderjung/xen.sh/latest/xen.sh
+# chmod +x ./xen.sh
+# ./xen.sh
 xen.sh - Xen build & installation tool
 
 Usage:
