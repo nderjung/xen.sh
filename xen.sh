@@ -20,10 +20,10 @@ Options:
   -h --help          Show this help menu
   -w --workdir       Place temporary build files into this working directory
                        (default is ./.build)
-  --arch             Build for this architecture
+  --arch             Build for this architecture (default is x86_64)
   --xen-root         Use an existing Xen source code.  If the directory is empty,
                        Xen source will be saved here.
-  --xen-version      Checkout this version of Xen
+  --xen-version      Checkout this version of Xen (default is 4.11)
 
 Some influential environment variables:
   CC        C compiler command
