@@ -1,6 +1,6 @@
 # `xen.sh`
 
-A do-it-yourself script that downloads, builds and installs [XenServer](https://xen.org/) from source.
+A do-it-yourself script that downloads, builds and installs [Xen](https://xenproject.org/) from source.
 
 ## Usage
 
