@@ -98,13 +98,13 @@ if [[ $HELP == 'y' ]]; then
 fi
 
 # Dependency management
-_deps_apt() {
+_install_dependencies() {
     _root_or_die
 
     local DISTRO=$(lsb_release -c -s)
 
     case $DISTRO in
-        bionic|xenial)
+        trusty|bionic|xenial)
             apt-get install -y --no-install-recommends \
                 autoconf bcc bin86 bison bridge-utils build-essential bzip2 \
                 ca-certificates curl e2fslibs-dev flex gawk gcc gettext \
@@ -114,8 +114,8 @@ _deps_apt() {
                 libpixman-1-dev libsdl-dev libvncserver-dev libx11-dev \
                 libyajl-dev make markdown mercurial ocaml ocaml-findlib pandoc \
                 patch pciutils-dev python python-dev python-twisted texinfo \
-                tgif transfig uuid-dev wget xz-utils zlib1g-de 
-            ;;
+                tgif transfig uuid-dev wget xz-utils zlib1g-dev
+            apt-get install -y 
         *)
             echo "This script is not yet compatible with $DISTRO"
             exit
@@ -154,11 +154,13 @@ case "$COMMAND" in
     
     build)
         _download_xen
-        _build_xen        
+        _install_dependencies
+        _build_xen
         ;;
 
     install)
         _download_xen
+        _install_dependencies
         _build_xen
 
         cd $XEN_ROOT
