@@ -38,7 +38,7 @@ Some influential environment variables:
   CXX       C++ compiler command
   CXXFLAGS  C++ compiler flags
   CXXCPP    C++ preprocessor
-  XENFLAGS  Additional ClickOS configure flags
+  XENFLAGS  Additional Xen configuration flags
 
 Help:
   For help using this tool, please open an issue on the GitHub repository:
