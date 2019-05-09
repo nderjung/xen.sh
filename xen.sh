@@ -115,6 +115,7 @@ _install_dependencies() {
                 libyajl-dev make markdown mercurial ocaml ocaml-findlib pandoc \
                 patch pciutils-dev python python-dev python-twisted texinfo \
                 tgif transfig uuid-dev wget xz-utils zlib1g-dev
+            ;;
         *)
             echo "This script is not yet compatible with $DISTRO"
             exit
