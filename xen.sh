@@ -6,7 +6,6 @@
 #
 
 DIR=$(dirname $(readlink -f "$0"))
-. "$DIR/common.sh"
 
 _help() {
     cat <<EOF
@@ -44,6 +43,17 @@ Help:
   For help using this tool, please open an issue on the GitHub repository:
   https://github.com/nderjung/xen.sh
 EOF
+}
+
+_echo_bold() {
+    echo -e "\033[1m$1\033[0m"
+}
+
+_root_or_die() {
+    if [[ $EUID -ne 0 ]]; then
+        echo "Must be root! Aborting!"
+        exit
+    fi
 }
 
 # Default program parameters
