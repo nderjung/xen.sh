@@ -164,6 +164,7 @@ case "$COMMAND" in
         _build_xen
 
         cd $XEN_ROOT
+        make -j$(getconf _NPROCESSORS_ONLN) world
         make -j$(getconf _NPROCESSORS_ONLN) install
 
         ;;
