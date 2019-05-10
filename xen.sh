@@ -140,6 +140,7 @@ _build_xen() {
 
     cd $XEN_ROOT
     ./configure \
+        --prefix=/usr \
         --disable-docs
     make -j$(getconf _NPROCESSORS_ONLN) build
 }
@@ -166,6 +167,14 @@ case "$COMMAND" in
         cd $XEN_ROOT
         make -j$(getconf _NPROCESSORS_ONLN) world
         make -j$(getconf _NPROCESSORS_ONLN) install
+
+        update-grub
+
+        echo >> /etc/network/interfaces <<EOF
+auto xenbr0
+iface xenbr0 inet dhcp
+  bridge_ports eth0
+EOF
 
         ;;
     *)
