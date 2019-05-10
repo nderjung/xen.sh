@@ -109,8 +109,8 @@ _install_dependencies() {
                 autoconf bcc bin86 bison bridge-utils build-essential bzip2 \
                 ca-certificates curl e2fslibs-dev flex gawk gcc gettext \
                 git-core iasl install-info iproute kmod libaio-dev libbz2-dev \
-                \libc6-dev libc6-dev-i386 libcurl3 libcurl4-openssl-dev \
-                \libjpeg-dev liblzma-dev libncurses5-dev libpixman-1-0 \
+                libc6-dev libc6-dev-i386 libcurl3 libcurl4-openssl-dev \
+                libjpeg-dev liblzma-dev libncurses5-dev libpixman-1-0 \
                 libpixman-1-dev libsdl-dev libvncserver-dev libx11-dev \
                 libyajl-dev make markdown mercurial ocaml ocaml-findlib pandoc \
                 patch pciutils-dev python python-dev python-twisted texinfo \
