@@ -174,11 +174,9 @@ case "$COMMAND" in
     install)
         _download_xen
         _install_dependencies
-        _build_xen
 
         cd $XEN_ROOT
         make -j$(getconf _NPROCESSORS_ONLN) world
-        make -j$(getconf _NPROCESSORS_ONLN) install
 
         update-grub
 
