@@ -176,6 +176,9 @@ case "$COMMAND" in
         _install_dependencies
 
         cd $XEN_ROOT
+        ./configure \
+            --prefix=/usr \
+            --disable-docs
         make -j$(getconf _NPROCESSORS_ONLN) world
 
         update-grub
