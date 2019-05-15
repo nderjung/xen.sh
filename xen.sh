@@ -147,14 +147,14 @@ _download_xen() {
 }
 
 # Methods for source code build
-_build_xen() {
-    _echo_bold "Building Xen..."
+_configure_xen() {
+    _echo_bold "Configuring Xen..."
 
     cd $XEN_ROOT
     ./configure \
         --prefix=/usr \
+        --libdir=/usr/lib64 \
         --disable-docs
-    make -j$(getconf _NPROCESSORS_ONLN) build
 }
 
 # Program interpretation
@@ -168,18 +168,19 @@ case "$COMMAND" in
     build)
         _download_xen
         _install_dependencies
-        _build_xen
+        _configure_xen
+        
+        cd $XEN_ROOT
+        make -j$(getconf _NPROCESSORS_ONLN) build
         ;;
 
     install)
         _download_xen
         _install_dependencies
+        _configure_xen
 
         cd $XEN_ROOT
-        ./configure \
-            --prefix=/usr \
-            --disable-docs
-        make -j$(getconf _NPROCESSORS_ONLN) world
+        make -j$(getconf _NPROCESSORS_ONLN) install
 
         update-grub
 
