@@ -183,7 +183,7 @@ case "$COMMAND" in
         make -j$(getconf _NPROCESSORS_ONLN) install
 
         update-grub
-        sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=3/g' /etc/default/grub
+        sed -i 's/GRUB_DEFAULT=[0-9]/GRUB_DEFAULT=3/' /etc/default/grub
 
         echo >> /etc/network/interfaces <<EOF
 auto xenbr0
