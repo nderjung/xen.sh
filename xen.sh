@@ -153,7 +153,7 @@ _configure_xen() {
     cd $XEN_ROOT
     ./configure \
         --prefix=/usr \
-        --libdir=/usr/lib \
+        --libdir=/usr/local/lib \
         --disable-docs
 }
 
