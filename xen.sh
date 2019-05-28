@@ -153,7 +153,8 @@ _configure_xen() {
     cd $XEN_ROOT
     ./configure \
         --prefix=/usr \
-        --libdir=/usr/local/lib \
+        --libdir=/usr/lib64 \
+        --enable-systemd \
         --disable-docs
 }
 
