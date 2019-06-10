@@ -12,9 +12,10 @@ _help() {
 xen.sh - Xen build & installation tool
 
 Usage:
-  xen.sh [OPTIONS] download     Get program sources
-  xen.sh [OPTIONS] build        Get program sources and build
-  xen.sh [OPTIONS] install      Get program sources, build and install
+  xen.sh [OPTIONS] download      Get program sources
+  xen.sh [OPTIONS] dependencies  Just install dependencies for build
+  xen.sh [OPTIONS] build         Get program sources and build
+  xen.sh [OPTIONS] install       Get program sources, build and install
 
 Options:
   -h --help          Show this help menu
@@ -98,7 +99,8 @@ if [[ $HELP == 'y' ]]; then
 fi
 
 # Dependency management
-_install_dependencies() {
+_install_
+() {
     _root_or_die
 
     local DISTRO=$(lsb_release -c -s)
@@ -167,6 +169,10 @@ case "$COMMAND" in
         _download_xen
         ;;
     
+    dependencies)
+        _install_dependencies
+        ;;
+        
     build)
         _download_xen
         _install_dependencies
