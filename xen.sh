@@ -99,8 +99,7 @@ if [[ $HELP == 'y' ]]; then
 fi
 
 # Dependency management
-_install_
-() {
+_install_dependencies() {
     _root_or_die
 
     local DISTRO=$(lsb_release -c -s)
