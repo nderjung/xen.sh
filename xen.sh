@@ -188,6 +188,12 @@ case "$COMMAND" in
 
         cd $XEN_ROOT
         make -j$(getconf _NPROCESSORS_ONLN) install
+        
+        /sbin/ldconfig
+        update-rc.d xencommons defaults 19 18
+        update-rc.d xendomains defaults 21 20
+        update-rc.d xen-watchdog defaults 22 23
+        # /etc/init.d/xendriverdomain start
 
         update-grub
         sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=3/g' /etc/default/grub
